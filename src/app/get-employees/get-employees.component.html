@@ -1,1 +1,29 @@
 <button type="button" class="btn btn-info" (click)="getEmployee()">Get Employee</button>
+
+ <p-dataTable [value]="employees">
+
+    <p-headerColumnGroup>
+        <p-row>
+            <p-column header="Employee ID" rowspan="2"></p-column>
+            <p-column header="Name" rowspan="2"></p-column>
+            <p-column header="Addresses" colspan="4"></p-column>
+        </p-row>
+        <p-row>
+            <p-column header="Temporay City" field="employees.address[0].city"></p-column>
+            <p-column header="Temporay Country" field="employees.address[0].country"></p-column>
+            <p-column header="Permanent City" field="employees.address[1].city"></p-column>
+            <p-column header="Permanent Country" field="employees.address[1].country"></p-column>            
+        </p-row>
+    </p-headerColumnGroup>
+    <p-column field="employee_id" header="Employee Id"></p-column>
+    <p-column field="name" header="Name"></p-column>
+</p-dataTable> 
+
+<!-- <p-dataTable [value]="employees">
+    <p-column field="employee_id" header="Employee Id"></p-column>
+    <p-column field="name" header="Name"></p-column>
+</p-dataTable>
+
+<p-dataTable [value]="employees.address">
+     <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+</p-dataTable> -->

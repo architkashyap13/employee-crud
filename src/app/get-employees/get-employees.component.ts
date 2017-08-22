@@ -20,27 +20,24 @@ export class GetEmployeesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   observableEmployees: Observable<Employee[]>;
-  //employees: Employee[];
+  employees: Employee[];
 
   ngOnInit() {
 
     // this.observableEmployees = this.apiService.retrieveWTObservable();
-    // this.observableEmployees.subscribe(employees => this.employees = employees);
-    let employees: Employee[];
+    // this.observableEmployees.subscribe(employees => this.employees = employees);  
 
     this.apiService.retrieve()
-      .then(employees => employees = employees);      
-    console.log(employees);
+      .then(employees => this.employees = employees);      
+    console.log(this.employees);
 
   }
 
-  getEmployee(){
-  
-    let employees: Employee[];
+  getEmployee(){    
 
      this.apiService.retrieve()
-      .then(employees => employees = employees);      
-    console.log(employees);
+      .then(employees => this.employees = employees);      
+    console.log(this.employees);
   }
 
 }

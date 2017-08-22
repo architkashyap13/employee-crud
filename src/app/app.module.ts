@@ -8,6 +8,8 @@ import { ApiService } from './api.service';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { GetEmployeesComponent } from './get-employees/get-employees.component';
 
+import {DataTableModule,SharedModule} from 'primeng/primeng';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,8 @@ import { GetEmployeesComponent } from './get-employees/get-employees.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule 
+    HttpModule,
+    DataTableModule, SharedModule 
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
